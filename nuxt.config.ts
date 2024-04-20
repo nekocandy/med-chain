@@ -68,6 +68,13 @@ export default defineNuxtConfig({
       NETWORK: env.NETWORK,
       NC_ADDRESS: env.NC_ADDRESS,
       OWNER_ADDRESS: env.OWNER_ADDRESS,
+      pusherConfig: {
+        appId: env.PUSHER_APP_ID,
+        key: env.PUSHER_KEY,
+        secret: env.PUSHER_SECRET,
+        cluster: env.PUSHER_CLUSTER || 'ap2',
+        useTLS: true,
+      },
     },
   },
 })
