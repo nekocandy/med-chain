@@ -1,11 +1,11 @@
 pub contract MedicineDatabase {
    pub struct Medicine {
-      pub let id: Int
+      pub let id: String
       pub let name: String
       pub(set) var price: Int
       pub(set) var quantity: Int
 
-      init(id: Int, name: String, price: Int, quantity: Int) {
+      init(id: String, name: String, price: Int, quantity: Int) {
          self.id = id
          self.name = name
          self.price = price
@@ -20,7 +20,7 @@ pub contract MedicineDatabase {
       self.medicines = {}
    }
 
-   pub fun addMedicine(id: Int, name: String, price: Int, quantity: Int) {
+   pub fun addMedicine(id: String, name: String, price: Int, quantity: Int) {
       let newMedicine = Medicine(id: id, name: name, price: price, quantity: quantity)
       self.medicines[name] = newMedicine
    }
