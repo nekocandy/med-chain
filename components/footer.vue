@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    Hello, Pizza!
+    <p>&copy;</p>
   </div>
 </template>
 

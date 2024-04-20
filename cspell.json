@@ -8,6 +8,7 @@
     "commitlint",
     "consola",
     "formkit",
+    "healthicons",
     "kysely",
     "notivue",
     "nuxt",
