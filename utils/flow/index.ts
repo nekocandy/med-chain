@@ -40,4 +40,4 @@ config({
   ...all_address,
 }).load({ flowJSON })
 
-export {}
+export { network }
