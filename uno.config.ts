@@ -39,4 +39,9 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
+  shortcuts: {
+    fjic: 'flex justify-center items-center',
+    fc: 'flex flex-col',
+    loading: 'i-eos-icons-loading',
+  },
 })
