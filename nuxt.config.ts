@@ -61,10 +61,10 @@ export default defineNuxtConfig({
     isEnabled: false,
   },
   runtimeConfig: {
-    auth: {
-      SECRET: env.AUTH_SECRET as string,
-      DISCORD_CLIENT_ID: env.DISCORD_CLIENT_ID as string,
-      DISCORD_CLIENT_SECRET: env.DISCORD_CLIENT_SECRET as string,
+    public: {
+      NETWORK: env.NETWORK,
+      NC_ADDRESS: env.NC_ADDRESS,
+      OWNER_ADDRESS: env.OWNER_ADDRESS,
     },
   },
 })
