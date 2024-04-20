@@ -60,6 +60,9 @@ export default defineNuxtConfig({
   auth: {
     isEnabled: false,
   },
+  notivue: {
+    position: 'bottom-right',
+  },
   runtimeConfig: {
     public: {
       NETWORK: env.NETWORK,
