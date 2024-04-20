@@ -11,8 +11,10 @@
     "kysely",
     "notivue",
     "nuxt",
+    "onflow",
     "sidebase",
     "trpc",
+    "unauthenticate",
     "unocss",
     "vueuse"
   ],
