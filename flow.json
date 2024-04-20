@@ -87,9 +87,26 @@
     "testnet": "access.devnet.nodes.onflow.org:9000"
   },
   "accounts": {
+    "default": {
+      "address": "f669cb8d41ce0c74",
+      "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
+    },
     "emulator-account": {
       "address": "f8d6e0586b0a20c7",
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
+    },
+    "utility": {
+      "address": "fd43f9148d4b725d",
+      "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "default": [],
+      "emulator-account": [
+        "MedicineDatabase"
+      ],
+      "utility": []
     }
   }
 }
