@@ -15,7 +15,7 @@ import { logIn, unauthenticate } from '~/utils/flow/authentication'
           Logout
         </button>
 
-        <NuxtLink href="/medicines/add" text-xl px-12 py-4 bg-teal-500 rounded-md text-white flex items-center gap-2>
+        <NuxtLink href="/home" text-xl px-12 py-4 bg-teal-500 rounded-md text-white flex items-center gap-2>
           <div i-healthicons-agriculture />
           <span>Continue to App</span>
           <div i-material-symbols-arrow-forward-rounded />
