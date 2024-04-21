@@ -21,8 +21,8 @@ const CARDS = [
     href: '/bills/create',
   },
   {
-    title: 'Add Doctor',
-    href: '/doctors/add',
+    title: 'Register Doctor',
+    href: '/doctors/register',
   },
   {
     title: 'View Doctors',
