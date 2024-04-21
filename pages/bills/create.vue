@@ -47,7 +47,7 @@ async function onSubmit() {
         Cost: ${billCost.value}<br>
         <br>
         FLOW Transaction ID: ${txnId}<br>
-        FLOW Explorer: <a href="https://testnet.flowscan.org/transaction/${txnId}" target="_blank">View Transaction</a>,
+        FLOW Explorer: <a href="https://testnet.flowdiver.io/transaction/${txnId}" target="_blank">View Transaction</a>,
         <br><br>
         Please pay the bill using FLOW tokens or NFTs. <br>
         Payment Link: <a href="${url}" target="_blank">${url}</a>
