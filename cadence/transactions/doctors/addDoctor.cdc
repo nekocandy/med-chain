@@ -1,4 +1,4 @@
-import Doctors from 0xdefault
+import Doctors from 0xNC
 
 transaction(
     doctor_id: String, 

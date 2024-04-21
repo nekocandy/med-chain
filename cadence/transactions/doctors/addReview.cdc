@@ -1,4 +1,4 @@
-import DoctorReviews from 0xdefault
+import DoctorReviews from 0xNC
 
 transaction(
     doctor: String,
