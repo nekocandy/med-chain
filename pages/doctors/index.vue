@@ -28,10 +28,16 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div>
+  <div fc gap-8>
     <Heading title="Doctors" />
 
-    <div grid grid-cols-3 py-6>
+    <div flex items-center>
+      <NuxtLink href="/doctors/register" class="px-4 py-2 border-2 bg-teal-600 text-white rounded-md">
+        Register Doctor
+      </NuxtLink>
+    </div>
+
+    <div grid grid-cols-3>
       <DoctorCard v-for="doctor in doctors" :key="doctor.doctor_id" :doctor="doctor" />
     </div>
   </div>
