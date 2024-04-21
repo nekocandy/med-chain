@@ -3,8 +3,8 @@ import * as fcl from '@onflow/fcl'
 export async function sendFlow(toAddress: string, amount: string) {
   const transaction = await fcl.mutate({
     cadence: `
-        import FungibleToken from 0xFungibleToken
-        import FlowToken from 0xFlowToken
+        import FungibleToken from 0x9a0766d93b6608b7
+        import FlowToken from 0x7e60df042a9c0868
     
         transaction(recipient: Address, amount: UFix64){
           prepare(signer: AuthAccount){
