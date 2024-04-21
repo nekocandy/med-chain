@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import * as fcl from '@onflow/fcl'
 import GET_BILLS from '~/cadence/scripts/bills/getBills.cdc?raw'
+import PAY_BILL_TRANSACTION from '~/cadence/transactions/bills/payBill.cdc?raw'
 import { getCurrentUser } from '~/utils/flow'
+import { sendFlow } from '~/utils/flow/utils'
 
 const route = useRoute()
 const billId = route.params.id as string
@@ -19,6 +21,44 @@ async function getBills() {
     billData.value = data[billId]
 
   isLoading.value = false
+}
+
+async function payBill() {
+  const sendingAmountPromise = push.promise('Sending FLOW Tokens...')
+  const sendTransactionId = await sendFlow(
+    // '0x3f5080e114fa96d9',
+    '0x045a1763c93006ca',
+    billData.value!.amount,
+  )
+
+  TransactionModals.value.push({
+    title: `Transaction for Paying Bill - ID: ${billData.value!.bill_id}`,
+    transactionId: sendTransactionId,
+  })
+
+  await fcl.tx(sendTransactionId).onceSealed()
+  sendingAmountPromise.resolve('Sent FLOW Tokens, mutating bill status...')
+
+  const payBillPromise = push.promise('Marking bill as paid...')
+  const txnId = await fcl.mutate({
+    cadence: PAY_BILL_TRANSACTION,
+    limit: 100,
+    // @ts-expect-error no typings.
+    args: (arg, t) => [
+      arg(billId, t.String),
+      arg(sendTransactionId, t.String),
+    ],
+  })
+
+  TransactionModals.value.push({
+    title: `Transaction for Marking Bill as Paid - ID: ${billData.value!.bill_id}`,
+    transactionId: txnId,
+  })
+
+  await fcl.tx(txnId).onceSealed()
+  payBillPromise.resolve('Bill paid successfully!')
+
+  await getBills()
 }
 
 onMounted(async () => {
@@ -64,7 +104,7 @@ onMounted(async () => {
         </div>
 
         <div v-if="!billData.paid">
-          <button bg-teal-600 px-4 py-2 rounded-md text-white>
+          <button bg-teal-600 px-4 py-2 rounded-md text-white @click="payBill">
             Pay Bill with FLOW Tokens
           </button>
         </div>
