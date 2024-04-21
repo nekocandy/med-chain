@@ -27,7 +27,7 @@
     "MedicineDatabase": {
       "source": "cadence/contracts/MedicineDatabase.cdc",
       "aliases": {
-        "emulator": "ee82856bf20e2aa6",
+        "emulator": "f8d6e0586b0a20c7",
         "mainnet": "f233dcee88fe0abe",
         "testnet": "9a0766d93b6608b7"
       }
@@ -88,7 +88,7 @@
   },
   "accounts": {
     "default": {
-      "address": "eb179c27144f783c",
+      "address": "045a1763c93006ca",
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     },
     "emulator-account": {
@@ -96,7 +96,7 @@
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     },
     "utility": {
-      "address": "e2f72218abeec2b9",
+      "address": "f669cb8d41ce0c74",
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     }
   },
