@@ -1,4 +1,4 @@
-import { config } from '@onflow/fcl'
+import { config, currentUser } from '@onflow/fcl'
 import flowJSON from '../../flow.json'
 
 const runtimeConfig = useRuntimeConfig().public
@@ -47,4 +47,7 @@ config({
   ...all_address,
 }).load({ flowJSON })
 
+export function getCurrentUser() {
+  return currentUser()
+}
 export { network }

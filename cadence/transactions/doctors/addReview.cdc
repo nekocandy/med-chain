@@ -1,4 +1,4 @@
-import DoctorReviews from "../../contracts/DoctorReviews.cdc"
+import DoctorReviews from 0xdefault
 
 transaction(
     doctor: String,
