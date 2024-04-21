@@ -1,5 +1,14 @@
 <script setup lang="ts">
-
+const LINKS = [
+  {
+    title: 'Home',
+    href: '/home',
+  },
+  {
+    title: 'Doctors',
+    href: '/doctors',
+  },
+]
 </script>
 
 <template>
@@ -10,7 +19,11 @@
       </h1>
     </NuxtLink>
 
-    <div />
+    <div fc items-center gap-4>
+      <NuxtLink v-for="link in LINKS" :key="link.title" :href="link.href" text-white font-bold text-lg class="hover:underline">
+        {{ link.title }}
+      </NuxtLink>
+    </div>
 
     <div />
   </div>
