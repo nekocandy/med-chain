@@ -13,8 +13,8 @@ const CARDS = [
     href: '/medicines/scan',
   },
   {
-    title: 'Medicine Realtime Scanner Information Page',
-    href: '/medicines/scan',
+    title: 'Medicine Realtime Scan Monitor',
+    href: '/medicines/scan-monitor',
   },
   {
     title: 'Create bills',
