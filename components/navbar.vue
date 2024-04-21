@@ -8,6 +8,10 @@ const LINKS = [
     title: 'Doctors',
     href: '/doctors',
   },
+  {
+    title: 'Donate',
+    href: '/donate',
+  },
 ]
 </script>
 
