@@ -97,7 +97,7 @@
   },
   "accounts": {
     "default": {
-      "address": "045a1763c93006ca",
+      "address": "192440c99cb17282",
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     },
     "emulator-account": {
@@ -105,7 +105,7 @@
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     },
     "utility": {
-      "address": "f669cb8d41ce0c74",
+      "address": "eb179c27144f783c",
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     }
   },

@@ -29,6 +29,13 @@ Object.entries(flowJSON.contracts)
   .filter(([_, value]) => typeof value === 'object')
   .map(([key, contract]) => all_address[`0x${key}`] = `0x${(contract as any).aliases[network]}`)
 
+Object.entries(flowJSON.accounts)
+  .filter(([_, value]) => typeof value === 'object')
+  .map(([key, account]) => all_address[`0x${key}`] = `0x${(account as any).address}`)
+
+consola.info(`[Flow] Network: ${network}`)
+consola.info(`[Flow] All Address: ${JSON.stringify(all_address)}`)
+
 config({
   'app.detail.title': 'Something',
   'app.detail.icon': 'https://pycz.dev/favicon.svg',
