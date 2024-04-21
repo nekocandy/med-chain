@@ -1,18 +1,48 @@
 <script setup lang="ts">
 import Qrcode from 'qrcode.vue'
+import * as fcl from '@onflow/fcl'
+import ADD_MEDICINE_TRANSACTION from '@/cadence/transactions/MedicineDatabase/addMedicine.cdc?raw'
 
 const medicineId = ref<string>('')
 const medicineName = ref<string>('')
 const medicinePrice = ref<number>(2)
 const medicineQuantity = ref<number>(100)
-const isSavingOnChain = ref<boolean>(true)
+const isSavingOnChain = ref<boolean>(false)
 const dataSavedOnChain = ref<boolean>(false)
 
-function onSubmit() {
+async function onSubmit() {
+  const requestPromise = push.promise('Adding medicine data to the FLOW chain database')
+  const txnId = await fcl.mutate({
+    cadence: ADD_MEDICINE_TRANSACTION,
+    // @ts-expect-error no typings
+    args: (arg, t) => [
+      arg(medicineId.value, t.String),
+      arg(medicineName.value, t.String),
+      arg(medicinePrice.value, t.Int),
+      arg(medicineQuantity.value, t.Int),
+    ],
+  })
+
+  TransactionModals.value.push({
+    title: 'Adding Medicine data to FLOW Chain',
+    transactionId: txnId,
+  })
+
+  await fcl.tx(txnId).onceSealed()
+  requestPromise.resolve('Data saved on FLOW Blockchain successfully')
+
   dataSavedOnChain.value = true
+
+  medicineId.value = `medicine_${nanoid(10)}`
+  medicineName.value = ''
+  medicinePrice.value = 2
+  medicineQuantity.value = 100
 }
 
 onMounted(() => {
+  if (!isUserLoggedIn)
+    navigateTo('/')
+
   medicineId.value = `medicine_${nanoid(10)}`
 })
 </script>
