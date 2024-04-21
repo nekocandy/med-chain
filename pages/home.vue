@@ -9,8 +9,24 @@ const CARDS = [
     href: '/medicines',
   },
   {
+    title: 'Mobile Scan Medicines QR Code',
+    href: '/medicines/scan',
+  },
+  {
+    title: 'Medicine Realtime Scanner Information Page',
+    href: '/medicines/scan',
+  },
+  {
     title: 'Create bills',
     href: '/bills/create',
+  },
+  {
+    title: 'Add Doctor',
+    href: '/doctors/add',
+  },
+  {
+    title: 'View Doctors',
+    href: '/doctors',
   },
 ]
 </script>
