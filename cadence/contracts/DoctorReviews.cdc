@@ -22,7 +22,7 @@ pub contract DoctorReviews {
     pub fun addReview(doctor: String, review: String, reviewer: Address) {
         let newReview = DoctorReview(doctor: doctor, review: review, reviewer: reviewer)
 
-       if (self.reviews[doctor] == nil) {
+        if (self.reviews[doctor] == nil) {
             self.reviews[doctor] = [newReview]
         } else {
             self.reviews[doctor]?.append(newReview)
