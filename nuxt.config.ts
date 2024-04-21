@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: 'opinionated nuxt',
+      title: 'Med Chain',
       meta: [
         {
           name: 'description',
