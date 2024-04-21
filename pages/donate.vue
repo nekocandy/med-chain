@@ -13,8 +13,7 @@ async function donate() {
 
   const sendingAmountPromise = push.promise('Sending FLOW Tokens...')
   const sendTransactionId = await sendFlow(
-    // '0x3f5080e114fa96d9',
-    '0x045a1763c93006ca',
+    '0x3f5080e114fa96d9',
     tokens,
   )
 
