@@ -36,6 +36,8 @@ async function onSubmit() {
   await fcl.tx(txnId).onceSealed()
   requestPromise.resolve('Data saved on FLOW Blockchain successfully')
 
+  const url = `${window.location.origin}/bills/${billId.value}`
+
   sendMail(
     billEmail.value,
         `Bill Generated for ${billName.value}`,
@@ -46,6 +48,9 @@ async function onSubmit() {
         <br>
         FLOW Transaction ID: ${txnId}<br>
         FLOW Explorer: <a href="https://testnet.flowscan.org/transaction/${txnId}" target="_blank">View Transaction</a>,
+        <br><br>
+        Please pay the bill using FLOW tokens or NFTs. <br>
+        Payment Link: <a href="${url}" target="_blank">${url}</a>
         `,
   )
 
