@@ -8,6 +8,7 @@
         "testnet": "9a0766d93b6608b7"
       }
     },
+    "Doctors": "cadence/contracts/Doctors.cdc",
     "FlowToken": {
       "source": "cadence/contracts/utility/FlowToken.cdc",
       "aliases": {
@@ -96,7 +97,7 @@
   },
   "accounts": {
     "default": {
-      "address": "01cf0e2f2f715450",
+      "address": "045a1763c93006ca",
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     },
     "emulator-account": {
@@ -104,13 +105,15 @@
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     },
     "utility": {
-      "address": "f3fcd2c1a78f5eee",
+      "address": "f669cb8d41ce0c74",
       "key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
     }
   },
   "deployments": {
     "emulator": {
-      "default": [],
+      "default": [
+        "Doctors"
+      ],
       "emulator-account": [
         "MedicineDatabase",
         "BillDatabase"
