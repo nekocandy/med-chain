@@ -37,7 +37,7 @@ onMounted(async () => {
       </NuxtLink>
     </div>
 
-    <div grid grid-cols-3>
+    <div grid grid-cols-3 gap-4>
       <DoctorCard v-for="doctor in doctors" :key="doctor.doctor_id" :doctor="doctor" />
     </div>
   </div>
