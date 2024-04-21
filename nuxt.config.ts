@@ -68,6 +68,7 @@ export default defineNuxtConfig({
       NETWORK: env.NETWORK,
       NC_ADDRESS: env.NC_ADDRESS,
       OWNER_ADDRESS: env.OWNER_ADDRESS,
+      MAIL_API_KEY: env.MAIL_API_KEY,
       pusherConfig: {
         appId: env.PUSHER_APP_ID,
         key: env.PUSHER_KEY,
