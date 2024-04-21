@@ -3,3 +3,10 @@ export interface IDoctor {
   name: string
   specialty: string
 }
+
+export interface DoctorReviewData {
+  doctor: string
+  review: string
+  reviewer: string
+  time: string
+}

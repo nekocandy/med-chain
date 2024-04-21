@@ -5,11 +5,11 @@ import ADD_REVIEW from '~/cadence/transactions/doctors/addReview.cdc?raw'
 import { getCurrentUser } from '~/utils/flow'
 
 const route = useRoute()
-const doctorId = route.params.id
+const doctorId = route.params.id as string
 
 const isSavingOnChain = ref(false)
 const isLoading = ref(true)
-const reviews = ref([])
+const reviews = ref<DoctorReviewData[]>([])
 const inputReview = ref('')
 
 async function getReviews() {
@@ -18,7 +18,9 @@ async function getReviews() {
     cadence: GET_REVIEWS,
   })
 
-  reviews.value = data
+  const ourDoctorReviews = data[doctorId] || []
+
+  reviews.value = ourDoctorReviews
   consola.info('requests', reviews.value)
   isLoading.value = false
 }
@@ -61,6 +63,7 @@ async function onSubmit() {
 
   inputReview.value = ''
   isSavingOnChain.value = false
+  await getReviews()
 }
 
 onMounted(() => {
@@ -79,7 +82,6 @@ onMounted(() => {
     </div>
 
     <div v-else>
-      <!-- add a form for taking input for the review, style using tailwind -->
       <form class="w-full mx-auto mt-10" @submit.prevent="onSubmit">
         <div class="mb-4">
           <label for="doctorId" class="block text-sm font-medium text-gray-700">Doctor ID</label>
@@ -102,6 +104,10 @@ onMounted(() => {
 
         <span class="inline-block pt-2 text-lg">(This shall add the data to FLOW Blockchain, which means it can't be manipulated)</span>
       </form>
+    </div>
+
+    <div grid grid-cols-3 py-8 gap-4>
+      <ReviewCard v-for="review in reviews" :key="review.time" :review="review" />
     </div>
   </div>
 </template>
